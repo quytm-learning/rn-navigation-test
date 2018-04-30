@@ -1,6 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Icon} from "native-base";
+import EventDetails from "../components/event/EventDetails";
+import {StackNavigator} from "react-navigation";
+import EventList from "../components/event/EventList";
 
 export default class HomeTab extends React.Component {
 
@@ -12,18 +15,19 @@ export default class HomeTab extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>Hello NotificationTab</Text>
-            </View>
+            <EventStackNavigator/>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+const EventStackNavigator = StackNavigator({
+
+    Main: {
+        screen: EventList
     },
+    EventDetails: {
+        screen: EventDetails
+    }
+}, {
+    headerMode: 'none'
 });
