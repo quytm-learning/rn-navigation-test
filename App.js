@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {StackNavigator} from 'react-navigation';
-import MainScreen from './components/MainScreen'
+import MainScreen from './screen/MainScreen'
+import Login from "./screen/Login";
 
 export default class App extends React.Component {
     render() {
@@ -13,10 +14,18 @@ export default class App extends React.Component {
 
 const AppStackNavigator = StackNavigator({
 
-    Main: {
+    MainScreen: {
         screen: MainScreen
+    },
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            header: null
+        }
     }
 
+}, {
+    initialRouteName: 'Login'
 });
 
 const styles = StyleSheet.create({
