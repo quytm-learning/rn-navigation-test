@@ -10,7 +10,6 @@ import {
     Text,
 
 
-
     AsyncStorage
 } from 'react-native';
 
@@ -56,7 +55,7 @@ export default class Login extends React.Component {
                 const resetAction = NavigationActions.reset({
                     index: 0,
                     actions: [
-                        NavigationActions.navigate({ routeName: 'MainScreen'})
+                        NavigationActions.navigate({routeName: 'MainScreen'})
                     ]
                 });
                 this.props.navigation.dispatch(resetAction);
@@ -65,6 +64,10 @@ export default class Login extends React.Component {
         } else {
             alert('Tài khoản đăng nhập không đúng');
         }
+    };
+
+    onForgotPassword = () => {
+        alert('To be continue ...');
     };
 
     render() {
@@ -102,6 +105,12 @@ export default class Login extends React.Component {
                         <TouchableOpacity style={styles.buttonContainer} onPress={this.onSubmit}>
                             <Text style={styles.buttonText}>LOGIN</Text>
                         </TouchableOpacity>
+
+                        <TouchableOpacity
+                            onPress={this.onForgotPassword}
+                            style={styles.forgotPasswordContainer}>
+                            <Text style={styles.forgotPasswordText}>Forgot password</Text>
+                        </TouchableOpacity>
                     </KeyboardAvoidingView>
 
                 </View>
@@ -116,8 +125,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ecf0f1',
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
     logoContainer: {
         alignItems: 'center',
@@ -148,5 +155,16 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '700'
+    },
+    forgotPasswordContainer: {
+        marginHorizontal: 80,
+    },
+    forgotPasswordText: {
+        padding: 16,
+        textAlign: 'center',
+        fontStyle: 'italic',
+        color: '#2980b9',
+        textDecorationLine: 'underline',
+        fontSize: 12
     }
 });
