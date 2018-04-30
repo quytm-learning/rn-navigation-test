@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Icon} from "native-base";
-import EventDetails from "../components/event/EventDetails";
+import NotificationDetails from "../components/notification/NotificationDetails";
 import {StackNavigator} from "react-navigation";
-import EventList from "../components/event/EventList";
+import NotificationList from "../components/notification/NotificationList";
 
 export default class HomeTab extends React.Component {
 
@@ -23,10 +23,10 @@ export default class HomeTab extends React.Component {
 const EventStackNavigator = StackNavigator({
 
     Main: {
-        screen: EventList
+        screen: NotificationList
     },
     EventDetails: {
-        screen: EventDetails
+        screen: NotificationDetails
     }
 }, {
     headerMode: 'none'
