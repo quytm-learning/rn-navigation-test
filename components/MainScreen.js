@@ -17,11 +17,11 @@ import ProfileTab from "../navigator/ProfileTab"
 export default class MainScreen extends React.Component {
 
     static navigationOptions = {
-        headerLeft: <Image />,
+        // headerLeft: <Image />,
         title: 'Screen',
-        headerRight: (
-            <Icon name={'ios-send-outline'}/>
-        )
+        // headerRight: (
+        //     <Icon name={'ios-send-outline'}/>
+        // )
     };
 
     render() {
