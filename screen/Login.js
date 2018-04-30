@@ -14,6 +14,7 @@ import {
     AsyncStorage
 } from 'react-native';
 
+import {NavigationActions} from 'react-navigation';
 
 export default class Login extends React.Component {
 
@@ -50,6 +51,16 @@ export default class Login extends React.Component {
             // fetch ... -> promise
             {// after login success
                 AsyncStorage.setItem('isLogin', 'yes');
+
+                // Reset Stack in Navigation
+                const resetAction = NavigationActions.reset({
+                    index: 0,
+                    actions: [
+                        NavigationActions.navigate({ routeName: 'MainScreen'})
+                    ]
+                });
+                this.props.navigation.dispatch(resetAction);
+
             }
         } else {
             alert('Tài khoản đăng nhập không đúng');
