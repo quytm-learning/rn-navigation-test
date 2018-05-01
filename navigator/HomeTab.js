@@ -23,7 +23,7 @@ export default class HomeTab extends React.Component {
 
 const EventStackNavigator = StackNavigator({
 
-    Main: {
+    EventList: {
         screen: EventList
     },
     EventDetails: {

@@ -25,8 +25,8 @@ const AppStackNavigator = StackNavigator({
     }
 
 }, {
-    initialRouteName: 'MainScreen'
-    // initialRouteName: 'Login'
+    // initialRouteName: 'MainScreen'
+    initialRouteName: 'Login'
 });
 
 const styles = StyleSheet.create({

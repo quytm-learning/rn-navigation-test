@@ -22,7 +22,7 @@ export default class EventItem extends React.Component {
 
                         <Text style={styles.eventText}>{this.props.eventValue.title}</Text>
                         <Text style={styles.eventText}>{this.props.eventValue.description}</Text>
-                        <Text style={styles.eventText}>{this.props.eventValue.description}</Text>
+                        <Text style={styles.eventText}>Mon, 13/05/2018</Text>
 
                     </View>
 
